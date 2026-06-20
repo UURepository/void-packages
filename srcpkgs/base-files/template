@@ -4,10 +4,10 @@ version=0.146
 revision=1
 bootstrap=yes
 depends="xbps-triggers"
-short_desc="Void Linux base system files"
-maintainer="Enno Boland <orphan@voidlinux.org>"
+short_desc="Varclen Linux base system files"
+maintainer="Rain Xelelo <rxelelo@outlook.com>"
 license="Public Domain"
-homepage="https://www.voidlinux.org"
+homepage="https://github.com/Varclen"
 conf_files="
 	/etc/inputrc
 	/etc/profile
