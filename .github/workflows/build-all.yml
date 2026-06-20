@@ -135,7 +135,7 @@ jobs:
 
             echo "Building Void package: $pkgver_full"
             chown -R builder:builder "$pkgdir"
-            sudo -Eu builder sh -c "cd '$VOIDPKGS' && ./xbps-src -E pkg '$pkgname'"
+            sudo -Eu builder sh -c "cd '$VOIDPKGS' && ./xbps-src -f -E pkg '$pkgname'"
 
             find "$VOIDPKGS/hostdir/binpkgs" -name "${pkgname}-*.xbps" -exec cp {} /tmp/built-packages/ \;
             find "$VOIDPKGS/hostdir/binpkgs" -name "${pkgname}-*.xbps.sig*" -exec cp {} /tmp/built-packages/ \; 2>/dev/null || true
