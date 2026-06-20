@@ -3,8 +3,8 @@
 # which use the version number.
 
 pkgname=gcc
-version=14.2.1+20250405
-revision=4
+version=16.1.0
+revision=0
 bootstrap=yes
 _patchver="${version%+*}"
 _minorver="${version%.*}"
@@ -14,7 +14,8 @@ _mpfr_version=4.2.1
 _mpc_version=1.3.1
 _isl_version=0.26
 short_desc="GNU Compiler Collection"
-maintainer="Enno Boland <gottox@voidlinux.org>"
+maintainer="Enno Boland <gottox@voidlinux.org>, Rain Xelelo <rXelelo@outlook.com>"
+GNU_SITE="https://ftp.gnu.org/gnu"
 homepage="http://gcc.gnu.org"
 license="GFDL-1.2-or-later, GPL-3.0-or-later, LGPL-2.1-or-later"
 case "${version}" in
@@ -26,7 +27,7 @@ distfiles+="
  ${GNU_SITE}/mpfr/mpfr-${_mpfr_version}.tar.xz
  ${GNU_SITE}/mpc/mpc-${_mpc_version}.tar.gz
  ${SOURCEFORGE_SITE}/libisl/isl-${_isl_version}.tar.bz2"
-checksum="9a84b0947d8fb18197eef3fce8e255e30a61f7f382cebb961b1705c1d99214a3
+checksum="50efb4d94c3397aff3b0d61a5abd748b4dd31d9d3f2ab7be05b171d36a510f79
  a3c2b80201b89e68616f4ad30bc66aee4927c3ce50e33929ca819d5c43538898
  277807353a6726978996945af13e52829e3abd7a9a5b7fb2793894e18f1fcbb2
  ab642492f5cf882b74aa0cb730cd410a81edcdbec895183ce930e706c1c759b8

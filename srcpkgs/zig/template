@@ -1,25 +1,21 @@
-# Template file for 'zig'
+# Template for 'zig'
 pkgname=zig
-version=0.13.0
+version=0.16.0
 revision=1
-archs="x86_64* aarch64*"
-build_style=cmake
-configure_args="-DZIG_TARGET_MCPU=baseline"
-make_cmd=make
-# we add xml2, zstd, zlib and ncurses
-# because our lld is static-only and requires those to work
-makedepends="clang18-devel llvm18-devel lld18-devel libxml2-devel libzstd-devel ncurses-devel zlib-devel"
-short_desc="Programming language designed for robustness, optimality, and clarity"
-maintainer="Orphaned <orphan@voidlinux.org>"
+hostmakedepends="tar"
+short_desc="General-purpose programming language and toolchain"
+maintainer="Rain Xelelo <rxelelo@outlook.com>"
 license="MIT"
 homepage="https://ziglang.org"
-distfiles="https://ziglang.org/download/${version}/zig-${version}.tar.xz"
-checksum=06c73596beeccb71cc073805bdb9c0e05764128f16478fa53bf17dfabc1d4318
-nopie=yes
-nocross=yes
-
-export CMAKE_GENERATOR="Unix Makefiles"
+distfiles="https://ziglang.org/download/${version}/zig-x86_64-linux-${version}.tar.xz"
+checksum=70e49664a74374b48b51e6f3fdfbf437f6395d42509050588bd49abe52ba3d00
 
 post_install() {
-	vlicense LICENSE
+    vlicense LICENSE
+}
+
+do_install() {
+    vbin zig
+    vmkdir usr/lib/zig
+    vcopy lib/* usr/lib/zig/
 }

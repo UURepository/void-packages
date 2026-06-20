@@ -1,6 +1,6 @@
 # Template file for 'nss'
 
-_nsprver=4.39
+_nsprver=4.38.2
 
 pkgname=nss
 version=3.125
@@ -118,7 +118,7 @@ do_install() {
 		install -m755 dist/*.OBJ/lib/${f} ${DESTDIR}/usr/lib
 	done
 
-	# install -m644 dist/*.OBJ/lib/libcrmf.a ${DESTDIR}/usr/lib
+	install -m644 dist/*.OBJ/lib/libcrmf.a ${DESTDIR}/usr/lib
 
 	for f in certutil cmsutil crlutil derdump modutil pk12util pp shlibsign \
 		signtool signver ssltap vfychain vfyserv; do
@@ -164,6 +164,6 @@ nss-devel_package() {
 		vmove usr/bin/nss-config
 		vmove usr/lib/pkgconfig
 		vmove usr/include
-		# vmove "usr/lib/*.a"
+		vmove "usr/lib/*.a"
 	}
 }
